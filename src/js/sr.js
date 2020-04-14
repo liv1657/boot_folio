@@ -21,7 +21,7 @@ export default function() {
   ScrollReveal().reveal('.hero-title', 
     assignProps(
       { 
-        delay: 500, 
+        delay: 500,
         origin: window.innerWidth > 768 ? 'left' : 'bottom'
       }, defaultProps)
   );
