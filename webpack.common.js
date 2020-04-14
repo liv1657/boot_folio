@@ -1,4 +1,5 @@
 const Webpack = require("webpack");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
   entry: {
     vendor: "./src/vendor.js",
@@ -30,6 +31,7 @@ module.exports = {
     new Webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
-    })
+    }),
+    new CopyWebpackPlugin([ {  context: './src/assets', from: '**/*.html', to: './assets', force: true }, {  context: './src/assets', from: '**/*.png', to: './assets', force: true } ])    
   ]
 };
