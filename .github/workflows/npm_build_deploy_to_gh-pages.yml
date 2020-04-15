@@ -16,10 +16,11 @@ jobs:
         run: |
           npm install
           npm run build
-          echo ${{ secrets.ACCESS_TOKEN }}
+          ls -l
+          echo $secrets.ACCESS_TOKEN
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          ACCESS_TOKEN: 30164ca2b24899c8be384cde83adb6c881232b93 #${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build # The folder the action should depl
+          FOLDER: dist # The folder the action should depl
