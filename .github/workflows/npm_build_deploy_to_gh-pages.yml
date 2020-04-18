@@ -1,8 +1,8 @@
 name: Build with NPM and Deploy to gh-pages
-on:
-  push:
-    branches:
-      - master
+on: repository_dispatch #http://www.btellez.com/posts/triggering-github-actions-with-webhooks.html
+#  push:
+#    branches:
+#      - master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
